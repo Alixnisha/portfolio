@@ -1,0 +1,493 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="normalize.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <nav id="nav">
+        <ul>
+            <li> <a href="#aboutme">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contactme">Contact </a></li>
+        </ul>
+        
+    </nav>
+
+    <style type="text/css">
+
+        
+
+        #nav{
+            display: flex;
+            width:100%;
+            height: 100px;
+            background-color:rgb(76, 79, 131);
+            position: fixed;
+            justify-content: center;
+            z-index:3;
+
+        }
+
+        nav ul{
+            display: flex;
+            overflow: hidden;
+
+        }
+
+        nav ul li{
+            float: left;
+            list-style: none;
+             
+        }
+
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 30px 80px;
+            text-align: center;
+            transition: 0.1s;
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        a:hover {
+            transition: 0.1s;
+            color: cyan;
+
+        }
+
+        .container {
+            
+            height: auto; 
+            display: block; 
+     
+        }
+
+        .container img {
+            border-radius: 0;
+            padding: 150px 20px 0px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+         
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: solid ;
+            color: rgb(46, 46, 131);
+            padding: 0;
+            font: 50%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+        }
+
+        #aboutme {
+            background-color: lavender;
+            padding: 10px;
+            margin: 50px;
+            border-radius: 2%;
+          
+        }
+
+        h2 {
+            color: rgb(46, 46, 131);
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .aboutme-section {
+            
+            justify-content: center;
+            justify-items: center;
+            flex-wrap: wrap;
+            display: flex;
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            
+
+        }
+
+        .aboutme-img {
+            
+            padding: 5px;
+            margin: 0%;
+            display: block;
+            
+        }
+
+        .aboutme-img img{
+            border-radius: 50% ;
+        }
+
+        .aboutme-text {
+            text-align: center;
+            padding: 25px;
+            width: 50%;
+            display: block;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .aboutme-text p{
+            color: lightslategrey;
+        }
+
+        #projects {
+            background-color: lavender;
+            padding: 5px;
+            margin: 5%;
+            position: relative;
+            height: auto;
+            width: 90%;
+            text-align: center;
+
+        }
+
+        
+
+        .project-space {
+            
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .project1 {
+            position: relative;
+            background: rgb(186, 227, 213);
+            width: 400px;
+            height: 400px;
+            margin: 20px ;
+            background-image:url("project1.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+
+        }
+
+        .project2 {
+            position: relative;
+            background: rgb(186, 227, 213);
+            width: 400px;
+            height: 400px;
+            margin: 20px ;
+            background-image:url("project2.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+
+        }
+
+        .project3 {
+            position: relative;
+            background: rgb(186, 227, 213);
+            width: 400px;
+            height: 400px;
+            margin: 20px ;
+            background-image:url("project3.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+
+        }
+
+        .project4 {
+            position: relative;
+            background: rgb(186, 227, 213);
+            width: 400px;
+            height: 400px;
+            margin: 20px ;
+            background-image:url("project4.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+
+        }
+
+        .text {
+            z-index: 2;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 55px;
+            color: rgb(77, 128, 172);
+            overflow: hidden;
+            transition: 0.1s;
+            padding: 0px;
+            position: absolute;
+            background:  rgb(248, 247, 246);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .text:hover{
+            height: 175px;
+            transition: 0.3s;
+        }
+
+        .content {
+            color:rgb(45, 45, 102);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+
+       #contactme {
+        background-color: lavender;
+        width: 90%;
+        margin: 5%;
+        padding: 5px;
+        
+
+       }
+
+       #contactme h2,#contactme p{
+
+        color:rgb(45, 45, 102);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
+       .contact-form {
+        max-width: 800px;
+        padding: 20px;
+        display: flex;
+        color:rgb(45, 45, 102);
+        text-align: left;
+        max-width: 1100px;
+
+       }
+
+       .contact-form label {
+        display: block;
+        margin-bottom: 9px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+       }
+
+       .message {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+       }
+
+
+
+       .message textarea{
+
+        border-radius: 5px;
+        border: 0px;
+       }
+
+       .contact-details{
+        flex: 1;
+        margin-right: 50px;
+       }
+
+       .contact-details input{
+        border-radius: 5px;
+        border: 0px;
+        width: 100%;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+       }
+
+       .message button {
+        color:  rgb(109, 109, 155);
+        border-radius: 5px;
+        background: rgb(238, 238, 244);
+        border: 0px;
+        width: 100px;
+        height: 40px;
+        margin-top: 40px;
+        margin-left: auto;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        background: rgb(238, 238, 244);
+        transition: 0.2s;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
+       .message button:hover {
+        background: black;
+        color: aliceblue;
+        transition: 0.2s ;
+
+       }
+
+       .fa  {
+        color: white;
+       }
+
+       .foot{
+        background-color:rgb(76, 79, 131);
+        
+       }
+
+       .copyright {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+        margin-bottom: ;
+        margin-right:auto ;
+        
+       }
+
+       .social-media {
+
+        margin-left: 90%;
+        font-size: 200%;
+        
+       }
+
+
+
+
+
+    </style>    
+      
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <div class="container">
+            <img src="pic2.jpg" alt="">
+            <h1>Welcome to Alixnisha's Portfolio!</h1>
+
+        </div>
+
+    </section>
+
+    <section id="aboutme">
+        <h2>About me</h2>
+        <div class="aboutme-section">
+            <div class="aboutme-img">
+                <img src="pic1.jpg" alt="">
+            </div>
+            <div class="aboutme-text">
+                <p>Hello ! I have been interested in learning website development for a very long time. So gave a thought to bring it in use by starting to learn web development.
+                    I've completed my Graduation from Mumbai University in Bachelor in Information Technology. <br><br>
+                    On the frontend, I specialize in harnessing the power of HTML-5, CSS, JavaScript, Bootstrap and jQuery to design visually captivating and intuitive interfaces. I believe that the user's interaction with a website should be seamless and delightful.
+
+                    In the backend realm, my proficiency lies in PHP and MySQL, allowing me to construct robust, efficient, and secure web applications. I understand the importance of a strong foundation to support dynamic frontend experiences.
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="projects">
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="project-space">
+
+                <div class="project1">
+                    <div class="text">
+                        <h3 class="project-name">Earth facts</h3>
+                        <div class="content">
+                            <p>A static HTML project about some facts about the earth</p>
+                        </div>
+
+                        <a class="button" href="file:///C:/Users/Neha/OneDrive/Documents/Web%20development%20course/Portfolio/Practice.html" target="_blank">View Project</a>
+                    </div>
+                </div>
+            
+
+                <div class="project2">
+                    <div class="text">
+                        <h3 class="project-name">BBC</h3>
+                        <div class="content">
+                            <p>A static BBC News website build using HTML CSS</p>
+                        </div>
+
+                        <a class="button" href="file:///C:/Users/Neha/OneDrive/Documents/Web%20development%20course/Portfolio/BBC.html" target="_blank">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project3">
+                    <div class="text">
+                        <h3 class="project-name">Cafe</h3>
+                        <div class="content">
+                            <p>Cafe website using bootsrap</p>
+                        </div>
+
+                        <a class="button" href="file:///C:/Users/Neha/OneDrive/Documents/Web%20development%20course/Portfolio/final.html" target="_blank">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project4">
+                    <div class="text">
+                        <h3 class="project-name">Reaction Tester</h3>
+                        <div class="content">
+                            <p>A game build using Javascript</p>
+                        </div>
+
+                        <a class="button" href="file:///C:/Users/Neha/OneDrive/Documents/Web%20development%20course/Portfolio/Reaction%20Tester.html" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>   
+
+    </section>
+
+    <section id="contactme">
+        <h2>Contact Me</h2>
+        <p>You can contact me using the below form.</p>
+        <div class="contact-form">
+
+            <div class="contact-details">
+
+                <label for="name">Name</label>
+                <input type="text" id="yourname" placeholder="Your Name"> <br><br>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Reason for contacting"><br><br>
+
+                <label for="email">Email Address</label>
+                <input type="text" id="email" placeholder="Your Email Address">
+
+            </div>
+
+            <div class="message">
+
+                <label for="msg">Message</label>
+                <textarea  id="msg" cols="30" rows="15"></textarea>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <div class="copyright">
+            This site &#169; 2023 Alixnisha Xess
+        </div>
+
+        <div class="social-media">
+            <a href="#"><i class="fa fa-facebook-official" style="font-size:24px"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+
+        </div>
+
+    </footer>
+  
+
+
+</body>
+</html>
