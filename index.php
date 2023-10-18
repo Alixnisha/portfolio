@@ -1,3 +1,49 @@
+?php
+   $error = "";
+
+   $successMessage = "";
+
+   if($_POST){
+        if(!$_POST['y_name']){
+            $error .= "A name is required<br>";
+        }
+
+        if(!$_POST['email']){
+            $error .= "A email address is required<br>";
+        }
+
+        if(!$_POST['subject']){
+            $error .= "A subject is required<br>";
+        }
+
+        if(!$_POST['message']){
+            $error .= "A message is required<br>";
+        }
+
+        if($error != ""){
+            $error = '<div class="alert alert-danger" role="alert"><p>There were error(s) in your form:<p>' . $error . '</div>';
+        }
+        else{ //email is good
+            $emailTo = "alexnisha1999@gmail.com";
+            $subject = $_POST['subject'];
+            $y_name = $_POST['y_name'];
+            $message = $_POST['message'];
+            $headers =$_POST['email'];
+
+            if(mail($emailTo, $subject ,$message,$headers,$y_name)){
+                $successMessage = '<div class="alert alert-success" role="alert">Your message was sent, ' . 
+                                    'we\'ll get back to you ASAP! </div> ';
+            }
+            else{
+                $error = '<div class="alert alert-danger" role="alert">Your message couldn\'t be sent - try again later </div>';
+
+            }
+        }
+
+   }
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -449,26 +495,28 @@
 
     <section id="contactme">
         <h2>Contact Me</h2>
+
+        <div id="error"><?php echo $error.$successMessage; ?></div>
         <p>You can contact me using the below form.</p>
         <div class="contact-form">
 
             <div class="contact-details">
 
                 <label for="name">Name</label>
-                <input type="text" id="yourname" placeholder="Your Name"> <br><br>
+                <input type="text" id="y_name" name="y_name" placeholder="Your Name"> <br><br>
 
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder="Reason for contacting"><br><br>
+                <input type="text" id="subject" name="subject" placeholder="Reason for contacting"><br><br>
 
                 <label for="email">Email Address</label>
-                <input type="text" id="email" placeholder="Your Email Address">
+                <input type="text" id="email" name="email" placeholder="Your Email Address">
 
             </div>
 
             <div class="message">
 
                 <label for="msg">Message</label>
-                <textarea  id="msg" cols="30" rows="15"></textarea>
+                <textarea  id="message" name="message" cols="30" rows="15"></textarea>
                 <button type="submit">Submit</button>
             </div>
         </div>
@@ -486,6 +534,48 @@
         </div>
 
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" 
+     crossorigin="anonymous">
+   </script>
+
+    <script type="text/javascript">
+         $("form").submit(function(e){
+                let error = "";
+
+                if($("#y_name").val() == ""){
+                    error += "The email field is required.<br>";
+                }
+
+                if($("#email").val() == ""){
+                    error += "The content field is required.<br>";
+                }
+
+                if($("#subject").val() == ""){
+                    error += "The content field is required.<br>";
+                }
+
+                if($("#message").val() == ""){
+                    error += "The content field is required.<br>";
+                }
+
+                //test if there was an error or not
+
+                if(error != "") {
+                    $("#error").html('<div class="alert alert-danger" ' +
+                    'role="alert" <p><strong>There were error(s) in your form:<strong></p>' + error + '<div>');
+
+                    return false;
+
+                }
+                else{
+                    //no errors!
+                    return true;
+                }
+            })
+    </script>
   
 
 
